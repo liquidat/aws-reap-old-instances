@@ -22,8 +22,6 @@
       - us-west-1
       - us-west-2
     filter_dates:
-      - 2015
-      - 2016
       - 2017
       - 2018
 
