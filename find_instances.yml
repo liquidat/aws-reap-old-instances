@@ -1,7 +1,3 @@
-- name: List current region and date
-  debug:
-    msg: "Region: {{ outer_item[0] }}, Date: {{outer_item[1] }}"
-
 - name: Get old instances
   ec2_instance_info:
     region: "{{ outer_item[0] }}"
@@ -12,7 +8,11 @@
 
 - name: Output old instances
   debug:
-    msg: "{{ item }}"
+    msg:
+      - "Region: {{ outer_item[0] }}, Date: {{outer_item[1] }}"
+      - "{{ item }}"
   loop:  "{{ old_instances | json_query(instance_name_id_time_query) }}"
   vars:
     instance_name_id_time_query: "instances[].{name: tags.Name, instance_id: instance_id, launch_time: launch_time}"
+  tags: [print_action]
+

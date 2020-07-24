@@ -22,8 +22,15 @@
       - us-west-1
       - us-west-2
     filter_dates:
-      - 2017
+#      - 2012 # scanned, nothing
+#      - 2013 # scanned, nothing
+#      - 2014 # scanned, nothing
+#      - 2015 # scanned, nothing
+#      - 2016 # scanned, nothing
+#      - 2017 # scanned, nothing
       - 2018
+      - 2019
+      - 2020-01
 
   tasks:
     - name: Loop through regions and dates
